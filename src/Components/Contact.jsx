@@ -74,10 +74,10 @@ const Contact = () => {
 
       {/* HERO HEADER */}
       <section className="pt-40 pb-20 px-6 md:px-12 lg:px-24">
-        <h1 className="text-purple-700 text-4xl md:text-8xl font-black tracking-tighter uppercase italic">
+        <h1 className="text-purple-700 text-4xl md:text-5xl font-black tracking-tighter uppercase italic">
           Get In Touch
         </h1>
-        <p className="text-black/70 text-xl font-light mt-6 max-w-2xl">
+        <p className="text-black text-xl font-light mt-6 max-w-2xl">
           Have questions or want to partner with us? Reach out and let's start a conversation about inclusion and empowerment.
         </p>
       </section>
@@ -145,19 +145,19 @@ const Contact = () => {
         {/* Contact Info */}
         <div className="flex flex-col justify-center space-y-12">
           <div>
-            <h3 className="text-white text-3xl font-black uppercase mb-4">Our Office</h3>
-            <p className="text-white text-lg font-light leading-relaxed">
+            <h3 className="text-black text-3xl font-black uppercase mb-4">Our Office</h3>
+            <p className="text-black text-lg font-light leading-relaxed">
               Kibera Mama Okinda drive, Nairobi Kenya<br />
               Supporting communities across the region.
             </p>
           </div>
 
           <div>
-            <h3 className="text-white text-3xl font-black uppercase mb-4">Direct Contact</h3>
-            <div className="space-y-2 text-white text-lg font-light">
-              <p>Email: <span className="text-white font-bold">info@differentability.org</span></p>
-              <p>Phone: <span className="text-white font-bold">+254 702 080 135</span></p>
-              <p>Operation Hours: <span className="text-white font-bold">9:00 AM - 5:00 PM</span></p>
+            <h3 className="text-black text-3xl font-black uppercase mb-4">Direct Contact</h3>
+            <div className="space-y-2 text-black text-lg font-light">
+              <p>Email: <span className="text-black font-bold">info@differentability.org</span></p>
+              <p>Phone: <span className="text-black font-bold">+254 702 080 135</span></p>
+              <p>Operation Hours: <span className="text-black font-bold">9:00 AM - 5:00 PM</span></p>
             </div>
           </div>
         </div>

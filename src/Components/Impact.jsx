@@ -32,19 +32,33 @@ const Impact = () => {
       </nav>
 
       {/* HERO SECTION */}
-      <section 
-        className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" 
-        style={{ backgroundImage: `url(${HeroImg})` }}
-      >
-        <div className="text-center px-4">
-          <h1 className="text-[oklch(54.6%_0.245_262.881)] text-6xl md:text-8xl font-black tracking-tighter uppercase italic drop-shadow-2xl">
-            Our Impact
-          </h1>
-          <p className="text-white text-xl mt-4 font-light tracking-widest uppercase opacity-80">
-            Transforming lives through mobility
-          </p>
-        </div>
-      </section>
+<section 
+  className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" 
+  style={{ backgroundImage: `url(${HeroImg})` }}
+>
+  {/* The Translucent Card Container */}
+  <div className="mx-4 p-10 md:p-20 bg-white/80 backdrop-blur- rounded-[3rem] border border-white/40 shadow-2xl max-w-5xl text-center">
+    
+    {/* Page Title */}
+    <h1 className="text-[#2d0a50] text-6xl md:text-4xl font-black tracking-tighter uppercase italic leading-none">
+      Our Impact
+    </h1>
+    
+    {/* Subtle high-contrast divider */}
+    <div className="h-2 w-32 bg-[#2F5A67] mx-auto my-8 rounded-full"></div>
+    
+    {/* Mission Statement with bold text for readability */}
+    <p className="text-black text-xl md:text-3xl font-bold tracking-tight uppercase opacity-95 leading-relaxed">
+      Transforming lives through Mobility & Inclusion.
+    </p>
+
+    {/* Secondary support text */}
+    <p className="mt-6 text-black text-lg md:text-xl font-medium max-w-2xl mx-auto italic">
+      Empowering over 350 individuals across Nairobi with the tools for independence.
+    </p>
+
+  </div>
+</section>
 
       {/* MAIN CONTENT */}
       <main className="py-24 px-6 md:px-12 lg:px-24">

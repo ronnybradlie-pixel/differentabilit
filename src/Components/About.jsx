@@ -69,13 +69,13 @@ const About = () => {
         <div className="max-w-6xl">
           <h2 className="text-purple-700 text-4xl font-black mb-10 uppercase italic">Our Foundation</h2>
           <div className="space-y-8 border-l-2 border-[oklch(28.2%_0.091_267.935)]/30 pl-8">
-            <p className="text-black text-2xl leading-relaxed font-light opacity-90">
+            <p className="text-black text-3xl leading-relaxed font-light opacity-90">
               Founded on the belief that disability is not inability, DAI works to break down systemic barriers, challenge stigma, and create equal opportunities for all. Our work is rooted in community engagement, advocacy, and empowerment.
             </p>
-            <p className="text-black text-2xl leading-relaxed font-light opacity-90">
+            <p className="text-black text-3xl leading-relaxed font-light opacity-90">
               We create safe spaces where women and girls with disabilities can access information, build confidence, and claim their rights—particularly in Sexual and Reproductive Health Rights (SRHR) and protection from Gender-Based Violence (GBV).
             </p>
-            <p className="text-black text-2xl leading-relaxed font-light opacity-90">
+            <p className="text-black text-3xl leading-relaxed font-light opacity-90">
               At DAI, we envision a society where diversity is embraced, barriers are removed, and every individual can live with dignity, independence, and purpose.
             </p>
           </div>

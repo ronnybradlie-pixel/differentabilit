@@ -60,19 +60,36 @@ const Home = () => {
 </nav>
 
       {/* 2. HERO SECTION */}
-      <section 
-        className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" 
-        style={{ backgroundImage: `url(${Hero})` }}
+<section 
+  className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" 
+  style={{ backgroundImage: `url(${Hero})` }}
+>
+  {/* The Translucent Card Container */}
+  <div className="mx-4 p-8 md:p-16 bg-white/70 backdrop-blur- rounded-2xl border border-white/20 shadow-1xl h-2xl w-1/2 text-center">
+    
+    <h1 className="text-[#2d0a50] text-2xl md:text-3xl font-black tracking-tight uppercase leading-tight">
+      EMPOWERING ABILITY, BEYOND DISABILITY.
+    </h1>
+    
+    {/* High contrast divider for visual structure */}
+    <div className="h-1.5 w-24 bg-[#2F5A67] mx-auto my-8 rounded-full"></div>
+    
+    <p className="text-gray-800 text-xl md:text-2xl font-bold max-w-3xl mx-auto italic leading-relaxed">
+      Supporting women and girls with disabilities to live with Dignity, Independence, and Purpose.
+    </p>
+
+    {/* Optional: Add a call to action button inside the card */}
+    <div className="mt-10">
+      <Link 
+        to="/about" 
+        className="bg-[#2d0a50] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-[#2F5A67] transition-all shadow-lg inline-block"
       >
-        <div className="text-center px-4">
-          <h1 className="text-[oklch(54.6%_0.245_262.881)] text-4xl md:text-7xl font-black tracking-tight uppercase leading-tight">
-            EMPOWERING ABILITY, <br /> BEYOND DISABILITY.
-          </h1>
-          <p className="text-white text-3xl md:text-xl font-bold mt-6 max-w-3xl mx-auto opacity-90 italic">
-            Supporting women and girls with disabilities to live with Dignity, Independence, and Purpose.
-          </p>
-        </div>
-      </section>
+        Learn More
+      </Link>
+    </div>
+    
+  </div>
+</section>
 
       {/* 3. ABOUT SECTION */}
       <section className="py-24 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row gap-12 items-center">

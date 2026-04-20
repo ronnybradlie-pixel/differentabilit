@@ -50,16 +50,28 @@ const Programs = () => {
 </nav>      
 
       {/* HERO SECTION */}
-      <section 
-        className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" 
-        style={{ backgroundImage: `url(${Hero})` }}
-      >
-        <div className="text-center px-4">
-          <p className="text-[oklch(54.6%_0.245_262.881)] text-3xl leading-relaxed font-bold opacity-90 mt-8 max-w-2xl mx-auto">
-            Targeted initiatives designed to empower, educate, and elevate women and girls with disabilities.
-          </p>
-        </div>
-      </section>
+<section 
+  className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" 
+  style={{ backgroundImage: `url(${Hero})` }}
+>
+  {/* Translucent Card Container */}
+  <div className="mx-4 p-10 md:p-16 bg-white/80 backdrop-blur- rounded-[2rem] border border-white/30 shadow-2xl max-w-4xl text-center">
+    
+    {/* High-contrast Heading */}
+    <h1 className="text-[#2d0a50] text-3xl md:text-4xl font-black tracking-tight uppercase leading-tight">
+      Our Programs
+    </h1>
+
+    {/* The Accent Line */}
+    <div className="h-1 w-20 bg-[oklch(54.6%_0.245_262.881)] mx-auto mb-8 rounded-full"></div>
+
+    {/* The Descriptive Text */}
+    <p className="text-gray-900 text-2xl md:text-3xl leading-relaxed font-bold opacity-95 max-w-2xl mx-auto">
+      Targeted initiatives designed to empower educate and elevate women and girls with disabilities.
+    </p>
+
+  </div>
+</section>
 
       {/* MAIN CONTENT */}
       <main className="py-24 px-6 md:px-12 lg:px-24 w-full">
@@ -116,6 +128,7 @@ const Programs = () => {
 
         </div>
       </main>
+
     </div>
   );
 };
