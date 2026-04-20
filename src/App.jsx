@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Components/Home'
 import Programs from './Components/Programs'
 import About from './Components/About'
+import Footer from './Components/Footer'
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Route path="/Programs" element={<Programs />} />
         <Route path="/about" element={<About />} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   )
 }
