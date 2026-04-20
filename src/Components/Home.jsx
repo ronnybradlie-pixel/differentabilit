@@ -5,6 +5,12 @@ import Covaw from '../assets/CovawLogo.png';
 import Prothea from '../assets/Prothealogo.png';
 import FPRJCLogo from '../assets/FPRJCLogo.png';
 import WCKLogo from '../assets/WCKLogo.webp';
+import belinda from '../assets/Belindamic.jpg';
+import DIWA1 from '../assets/DIWA1.jpg';
+import DIWA2 from '../assets/DIWA2.jpeg';
+import Economic from '../assets/EconomicEmpowerment.jpeg';
+import Mentorship from '../assets/Mentorship.jpeg';
+import logo from '../assets/DAILogo.jpg';
 import Hero from '../assets/Hero.JPG';
 
 const Home = () => {
@@ -25,9 +31,10 @@ const Home = () => {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
         scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
       }`}>
-        <div className="text-xl font-black tracking-tighter text-white">
+        <img src={logo} alt="DAI Logo" className="h-25 w-25" />
+        {/* <div className="text-xl font-black tracking-tighter text-white">
           DIFFERENT ABILITY
-        </div>
+        </div> */}
         <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
           <li className="text-[oklch(54.6%_0.245_262.881)] border-b-2 border-[oklch(28.2%_0.091_267.935)] cursor-pointer">Home</li>
           <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">About Us</li>
@@ -54,7 +61,7 @@ const Home = () => {
       {/* 3. ABOUT SECTION */}
       <section className="py-24 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row gap-12 items-center">
         <div className="w-full md:w-1/2">
-          <img src="/assets/about-image.jpg" alt="About DAI" className="rounded-lg shadow-2xl" />
+          <img src={belinda} alt="About DAI" className="rounded-lg shadow-2xl" />
         </div>
         <div className="w-full md:w-1/2 text-left">
           <h2 className="text-[oklch(54.6%_0.245_262.881)] text-4xl font-black uppercase mb-6">About Different Ability Initiative</h2>
@@ -71,19 +78,19 @@ const Home = () => {
         <h2 className="text-[oklch(54.6%_0.245_262.881)] text-4xl font-black uppercase mb-16 text-left">Our Focus Areas</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { title: "Advocacy for Inclusion and Equality", img: "/assets/focus1.jpg" },
-            { title: "Sexual & Reproductive Health Rights", img: "/assets/focus2.jpg" },
-            { title: "Mentorship & Peer Learning", img: "/assets/focus3.jpg" },
-            { title: "Economic Empowerment", img: "/assets/focus4.jpg" }
+            { title: "Advocacy for Inclusion and Equality", img: DIWA1 },
+            { title: "Sexual & Reproductive Health Rights", img: DIWA2 },
+            { title: "Mentorship & Peer Learning", img: Mentorship },
+            { title: "Economic Empowerment", img: Economic }
           ].map((area, index) => (
             <div key={index} className="flex flex-col text-left group">
               <div className="overflow-hidden rounded-lg mb-4 h-48">
                 <img src={area.img} alt={area.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
-              <h3 className="text-white font-bold text-xl leading-snug group-hover:text-[oklch(28.2%_0.091_267.935)] transition-colors">
+              <h3 className="text-white font-bold text-xl leading-snug transition-colors">
                 {area.title}
               </h3>
-              <button className="text-[oklch(28.2%_0.091_267.935)] font-bold mt-4 text-left uppercase text-sm tracking-tighter">Read More</button>
+              {/* <button className="text-[oklch(28.2%_0.091_267.935)] font-bold mt-4 text-left uppercase text-sm tracking-tighter">Read More</button> */}
             </div>
           ))}
         </div>
@@ -107,7 +114,7 @@ const Home = () => {
       {/* 6. PARTNERS */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
         <h2 className="text-[oklch(28.2%_0.091_267.935)] text-4xl font-black uppercase mb-12 text-center">Our Partners</h2>
-        <div className="flex flex-wrap justify-center items-center gap-16 grayscale opacity-70 hover:grayscale-0 transition-all">
+        <div className="flex flex-wrap justify-center items-center gap-16 opacity-70 transition-all">
           <img src={Prothea} alt="Prothea" className="h-16" />
           <img src={FPRJCLogo} alt="FPRJC" className="h-16" />
           <img src={Covaw} alt="Covaw" className="h-16" />
