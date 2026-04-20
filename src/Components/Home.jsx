@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// Importing the assets correctly
+import { Link } from 'react-router-dom';
 import HeroImg from '../assets/hero.png';
 import Covaw from '../assets/CovawLogo.png';
 import Prothea from '../assets/Prothealogo.png';
@@ -27,21 +27,33 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#2d0a50] font-sans selection:bg-[#2F5A67] selection:text-white">
       
-      {/* 1. NAVBAR */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
-        scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
-      }`}>
-        <img src={logo} alt="DAI Logo" className="h-25 w-25" />
-        {/* <div className="text-xl font-black tracking-tighter text-white">
-          DIFFERENT ABILITY
-        </div> */}
-        <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
-          <li className="text-[oklch(54.6%_0.245_262.881)] border-b-2 border-[oklch(28.2%_0.091_267.935)] cursor-pointer">Home</li>
-          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">About Us</li>
-          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">Programs</li>
-          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">Contact Us</li>
-        </ul>
-      </nav>
+{/* 1. NAVBAR */}
+<nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
+  scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
+}`}>
+  <img src={logo} alt="DAI Logo" className="h-25 w-25" />
+  
+  <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
+    {/* Use the <Link> component and set the 'to' attribute to your route path */}
+     <li className="cursor-pointer">
+      <Link to="/" className="text-[oklch(54.6%_0.245_262.881)] border-b-2 border-[oklch(28.2%_0.091_267.935)]">
+        Home
+      </Link>
+    </li>
+    
+    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+      <Link to="/Programs">Programs</Link>
+    </li>
+    
+    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+      <Link to="/about">About Us</Link>
+    </li>
+    
+    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+      <Link to="/contact">Contact Us</Link>
+    </li>
+  </ul>
+</nav>
 
       {/* 2. HERO SECTION */}
       <section 
@@ -52,7 +64,7 @@ const Home = () => {
           <h1 className="text-[oklch(54.6%_0.245_262.881)] text-4xl md:text-7xl font-black tracking-tight uppercase leading-tight">
             EMPOWERING ABILITY, <br /> BEYOND DISABILITY.
           </h1>
-          <p className="text-white text-lg md:text-xl font-light mt-6 max-w-3xl mx-auto opacity-90 italic">
+          <p className="text-white text-3xl md:text-xl font-bold mt-6 max-w-3xl mx-auto opacity-90 italic">
             Supporting women and girls with disabilities to live with Dignity, Independence, and Purpose.
           </p>
         </div>
