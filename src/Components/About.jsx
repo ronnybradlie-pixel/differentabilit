@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../assets/Hero.JPG';
 import logo from '../assets/DAILogo.jpg';
+import Prothea from '../assets/Prothealogo.png';
+import FPRJCLogo from '../assets/FPRJCLogo.png';
+import Covaw from '../assets/CovawLogo.png';
+import WCKLogo from '../assets/WCKLogo.webp';
 const About = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -24,7 +28,7 @@ const About = () => {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
         scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
       }`}>
-        <img src={logo} alt="DAI Logo" className="h-16 w-auto" />
+        <img src={logo} alt="DAI Logo" className="h-25 w-25" />
         <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
           <li><Link to="/" className="hover:text-[#2F5A67] transition-colors">Home</Link></li>
           <li><Link to="/about" className="hover:text-[#2F5A67] transition-colors">Programs</Link></li>
@@ -42,7 +46,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* <main className="py-24 px-6 md:px-12 lg:px-24">
+      <main className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-6xl">
           <h2 className="text-[oklch(54.6%_0.245_262.881)] text-4xl font-black mb-10 uppercase italic">Our Foundation</h2>
           <div className="space-y-8 border-l-2 border-[oklch(28.2%_0.091_267.935)]/30 pl-8">
@@ -60,7 +64,7 @@ const About = () => {
       </main>
 
       {/* 4. VISION & MISSION CARDS */}
-      {/* <section className="py-20 px-6 md:px-12 lg:px-24 bg-black/20">
+      <section className="py-20 px-6 md:px-12 lg:px-24 bg-black/20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="bg-white/5 p-12 rounded-2xl border border-white/10 hover:border-[#2F5A67] transition-all">
             <h3 className="text-[oklch(54.6%_0.245_262.881)] text-3xl font-black mb-6 uppercase">Our Vision</h3>
@@ -75,7 +79,16 @@ const About = () => {
             </p>
           </div>
         </div>
-      </section>  */}
+      </section>
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+              <h2 className="text-[oklch(28.2%_0.091_267.935)] text-4xl font-black uppercase mb-12 text-center">Our Partners</h2>
+              <div className="flex flex-wrap justify-center items-center gap-16 opacity-70 transition-all">
+                <img src={Prothea} alt="Prothea" className="h-16" />
+                <img src={FPRJCLogo} alt="FPRJC" className="h-16" />
+                <img src={Covaw} alt="Covaw" className="h-16" />
+                <img src={WCKLogo} alt="WCK" className="h-16" />
+              </div>
+            </section>
 
     </div>
   );
