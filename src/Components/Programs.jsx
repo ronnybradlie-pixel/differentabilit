@@ -44,10 +44,7 @@ const Programs = () => {
         style={{ backgroundImage: `url(${Hero})` }}
       >
         <div className="text-center px-4">
-          <h1 className="text-[oklch(54.6%_0.245_262.881)] text-6xl md:text-9xl font-black tracking-tighter uppercase drop-shadow-2xl">
-            OUR PROGRAMS
-          </h1>
-          <p className="text-white text-3xl leading-relaxed font-bold opacity-90 mt-8 max-w-2xl mx-auto">
+          <p className="text-[oklch(54.6%_0.245_262.881)] text-3xl leading-relaxed font-bold opacity-90 mt-8 max-w-2xl mx-auto">
             Targeted initiatives designed to empower, educate, and elevate women and girls with disabilities.
           </p>
         </div>
