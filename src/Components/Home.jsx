@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from 'react';
+// Importing the assets correctly
+import HeroImg from '../assets/hero.png';
+import Covaw from '../assets/CovawLogo.png';
+import Prothea from '../assets/Prothealogo.png';
+import FPRJCLogo from '../assets/FPRJCLogo.png';
+import WCKLogo from '../assets/WCKLogo.webp';
+import Hero from '../assets/Hero.JPG';
 
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -12,7 +19,6 @@ const Home = () => {
   }, []);
 
   return (
-    /* Background remains the deep purple #2d0a50 */
     <div className="min-h-screen bg-[#2d0a50] font-sans selection:bg-[#2F5A67] selection:text-white">
       
       {/* 1. NAVBAR */}
@@ -23,7 +29,7 @@ const Home = () => {
           DIFFERENT ABILITY
         </div>
         <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
-          <li className="text-[oklch(28.2%_0.091_267.935)] border-b-2 border-[oklch(28.2%_0.091_267.935)] cursor-pointer">Home</li>
+          <li className="text-[oklch(54.6%_0.245_262.881)] border-b-2 border-[oklch(28.2%_0.091_267.935)] cursor-pointer">Home</li>
           <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">About Us</li>
           <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">Programs</li>
           <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">Contact Us</li>
@@ -33,10 +39,10 @@ const Home = () => {
       {/* 2. HERO SECTION */}
       <section 
         className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" 
-        style={{ backgroundImage: `linear-gradient(rgba(45, 10, 80, 0.5), rgba(45, 10, 80, 0.7)), url('/assets/hero-bg.jpg')` }}
+        style={{ backgroundImage: `url(${Hero})` }}
       >
         <div className="text-center px-4">
-          <h1 className="text-[oklch(28.2%_0.091_267.935)] text-4xl md:text-7xl font-black tracking-tight uppercase leading-tight">
+          <h1 className="text-[oklch(54.6%_0.245_262.881)] text-4xl md:text-7xl font-black tracking-tight uppercase leading-tight">
             EMPOWERING ABILITY, <br /> BEYOND DISABILITY.
           </h1>
           <p className="text-white text-lg md:text-xl font-light mt-6 max-w-3xl mx-auto opacity-90 italic">
@@ -51,7 +57,7 @@ const Home = () => {
           <img src="/assets/about-image.jpg" alt="About DAI" className="rounded-lg shadow-2xl" />
         </div>
         <div className="w-full md:w-1/2 text-left">
-          <h2 className="text-[oklch(28.2%_0.091_267.935)] text-4xl font-black uppercase mb-6">About Different Ability Initiative</h2>
+          <h2 className="text-[oklch(54.6%_0.245_262.881)] text-4xl font-black uppercase mb-6">About Different Ability Initiative</h2>
           <p className="text-white text-lg leading-relaxed opacity-80">
             Different Ability Initiative (DAI) is a grassroots organization dedicated to advancing the rights, 
             dignity, and inclusion of persons with disabilities, with a special focus on women and girls 
@@ -62,7 +68,7 @@ const Home = () => {
 
       {/* 4. FOCUS AREAS */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-black/10">
-        <h2 className="text-[oklch(28.2%_0.091_267.935)] text-4xl font-black uppercase mb-16 text-left">Our Focus Areas</h2>
+        <h2 className="text-[oklch(54.6%_0.245_262.881)] text-4xl font-black uppercase mb-16 text-left">Our Focus Areas</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { title: "Advocacy for Inclusion and Equality", img: "/assets/focus1.jpg" },
@@ -84,7 +90,7 @@ const Home = () => {
       </section>
 
       {/* 5. IMPACT STATS */}
-      <section className="py-20 px-6 md:px-12 lg:px-24 flex flex-wrap justify-between gap-12  text-white text-center bg-white/5 backdrop-blur-sm">
+      <section className="py-20 px-6 md:px-12 lg:px-24 flex flex-wrap justify-between gap-12 text-center bg-white">
         {[
           { label: "Women & Girls Reached", value: "156 +" },
           { label: "Community Sessions", value: "10 +" },
@@ -93,19 +99,19 @@ const Home = () => {
         ].map((stat, i) => (
           <div key={i} className="flex-1 min-w-[150px]">
             <div className="text-[oklch(28.2%_0.091_267.935)] text-5xl font-black mb-2">{stat.value}</div>
-            <div className="text-white uppercase text-xs tracking-widest font-bold opacity-60">{stat.label}</div>
+            <div className="text-[oklch(28.2%_0.091_267.935)] uppercase text-xs tracking-widest font-bold opacity-60">{stat.label}</div>
           </div>
         ))}
       </section>
 
       {/* 6. PARTNERS */}
-      <section className="py-24 px-6 md:px-12 lg:px-24">
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
         <h2 className="text-[oklch(28.2%_0.091_267.935)] text-4xl font-black uppercase mb-12 text-center">Our Partners</h2>
         <div className="flex flex-wrap justify-center items-center gap-16 grayscale opacity-70 hover:grayscale-0 transition-all">
-          <img src="/assets/prothea-logo.png" alt="Prothea" className="h-16" />
-          <img src="/assets/partner2.png" alt="Partner" className="h-16" />
-          <img src="/assets/partner3.png" alt="Partner" className="h-16" />
-          <img src="/assets/partner4.png" alt="Partner" className="h-16" />
+          <img src={Prothea} alt="Prothea" className="h-16" />
+          <img src={FPRJCLogo} alt="FPRJC" className="h-16" />
+          <img src={Covaw} alt="Covaw" className="h-16" />
+          <img src={WCKLogo} alt="WCK" className="h-16" />
         </div>
       </section>
 
