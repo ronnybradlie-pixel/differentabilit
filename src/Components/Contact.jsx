@@ -4,6 +4,14 @@ import logo from '../assets/Prothealogo.png';
 
 const Contact = () => {
   const [scrolled, setScrolled] = useState(false);
+  
+  // 1. Setup state to capture user input
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +20,23 @@ const Contact = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // 2. WhatsApp Logic
+  const handleWhatsAppSend = (e) => {
+    e.preventDefault();
+    
+    const myNumber = "254702080135"; 
+    
+    // Formatting the message with line breaks (%0A) and bold text (*)
+    const text = `*New Message from DAI Website*%0A%0A` + 
+                 `*Name:* ${formData.name}%0A` + 
+                 `*Email:* ${formData.email}%0A` + 
+                 `*Subject:* ${formData.subject}%0A` + 
+                 `*Message:* ${formData.message}`;
+
+    const waUrl = `https://wa.me/${myNumber}?text=${text}`;
+    window.open(waUrl, '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-[#2d0a50] font-sans selection:bg-[#2F5A67] selection:text-white">
@@ -25,7 +50,7 @@ const Contact = () => {
           <li><Link to="/" className="hover:text-[#2F5A67] transition-colors">Home</Link></li>
           <li><Link to="/about" className="hover:text-[#2F5A67] transition-colors">About Us</Link></li>
           <li><Link to="/programs" className="hover:text-[#2F5A67] transition-colors">Programs</Link></li>
-          <li><Link to="/contact" className="text-[#2F5A67] border-b-2 border-[#2F5A67]">Contact Us</Link></li>
+          <li><Link to="/contact" className="hover:text-[#2F5A67] transition-colors">Contact Us</Link></li>
         </ul>
       </nav>
 
@@ -44,30 +69,57 @@ const Contact = () => {
         
         {/* Contact Form */}
         <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10">
-          <form className="space-y-6">
+          <form onSubmit={handleWhatsAppSend} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-[oklch(54.6%_0.245_262.881)] text-xs font-bold uppercase tracking-widest">Name</label>
-                <input type="text" placeholder="Your Name" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#2F5A67] transition-all" />
+                <input 
+                  type="text" 
+                  required
+                  placeholder="Your Name" 
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#2F5A67] transition-all"
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                />
               </div>
               <div className="space-y-2">
                 <label className="text-[oklch(54.6%_0.245_262.881)] text-xs font-bold uppercase tracking-widest">Email</label>
-                <input type="email" placeholder="email@example.com" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#2F5A67] transition-all" />
+                <input 
+                  type="email" 
+                  required
+                  placeholder="email@example.com" 
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#2F5A67] transition-all"
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                />
               </div>
             </div>
             
             <div className="space-y-2">
               <label className="text-[oklch(54.6%_0.245_262.881)] text-xs font-bold uppercase tracking-widest">Subject</label>
-              <input type="text" placeholder="How can we help?" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#2F5A67] transition-all" />
+              <input 
+                type="text" 
+                required
+                placeholder="How can we help?" 
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#2F5A67] transition-all"
+                onChange={(e) => setFormData({...formData, subject: e.target.value})}
+              />
             </div>
 
             <div className="space-y-2">
               <label className="text-[oklch(54.6%_0.245_262.881)] text-xs font-bold uppercase tracking-widest">Message</label>
-              <textarea rows="5" placeholder="Write your message here..." className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#2F5A67] transition-all resize-none"></textarea>
+              <textarea 
+                rows="5" 
+                required
+                placeholder="Write your message here..." 
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#2F5A67] transition-all resize-none"
+                onChange={(e) => setFormData({...formData, message: e.target.value})}
+              ></textarea>
             </div>
 
-            <button className="w-full bg-[#2F5A67] hover:bg-[#254852] text-white font-bold py-4 rounded-xl uppercase tracking-[0.2em] transition-all transform hover:scale-[1.02]">
-              Send Message
+            <button 
+              type="submit"
+              className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 rounded-xl uppercase tracking-[0.2em] transition-all transform hover:scale-[1.02] flex justify-center items-center gap-2"
+            >
+              Send via WhatsApp
             </button>
           </form>
         </div>
@@ -77,7 +129,7 @@ const Contact = () => {
           <div>
             <h3 className="text-white text-3xl font-black uppercase mb-4">Our Office</h3>
             <p className="text-white text-lg font-light leading-relaxed">
-              Kibera Mama Okinda drive,Nairobi Kenya<br />
+              Kibera Mama Okinda drive, Nairobi Kenya<br />
               Supporting communities across the region.
             </p>
           </div>
@@ -90,7 +142,6 @@ const Contact = () => {
               <p>Operation Hours: <span className="text-white font-bold">9:00 AM - 5:00 PM</span></p>
             </div>
           </div>
-
         </div>
 
       </main>
