@@ -25,7 +25,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#2d0a50] font-sans selection:bg-[#2F5A67] selection:text-white">
+    <div className="min-h-screen bg-white font-sans selection:bg-[#2F5A67] selection:text-black">
       
 {/* 1. NAVBAR */}
 <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
@@ -80,8 +80,8 @@ const Home = () => {
           <img src={belinda} alt="About DAI" className="rounded-lg shadow-2xl" />
         </div>
         <div className="w-full md:w-1/2 text-left">
-          <h2 className="text-[oklch(54.6%_0.245_262.881)] text-4xl font-black uppercase mb-6">About Different Ability Initiative</h2>
-          <p className="text-white text-lg leading-relaxed opacity-80">
+          <h2 className="text-purple-700 text-4xl font-black uppercase mb-6">About Different Ability Initiative</h2>
+          <p className="text-black text-lg leading-relaxed opacity-80">
             Different Ability Initiative (DAI) is a grassroots organization dedicated to advancing the rights, 
             dignity, and inclusion of persons with disabilities, with a special focus on women and girls 
             in underserved communities.
@@ -91,7 +91,7 @@ const Home = () => {
 
       {/* 4. FOCUS AREAS */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-black/10">
-        <h2 className="text-[oklch(54.6%_0.245_262.881)] text-4xl font-black uppercase mb-16 text-left">Our Focus Areas</h2>
+        <h2 className="text-purple-700 text-4xl font-black uppercase mb-16 text-left">Our Focus Areas</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { title: "Advocacy for Inclusion and Equality", img: DIWA1 },
@@ -103,10 +103,9 @@ const Home = () => {
               <div className="overflow-hidden rounded-lg mb-4 h-48">
                 <img src={area.img} alt={area.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
-              <h3 className="text-white font-bold text-xl leading-snug transition-colors">
+              <h3 className="text-black font-bold text-xl leading-snug transition-colors">
                 {area.title}
               </h3>
-              {/* <button className="text-[oklch(28.2%_0.091_267.935)] font-bold mt-4 text-left uppercase text-sm tracking-tighter">Read More</button> */}
             </div>
           ))}
         </div>
@@ -129,7 +128,7 @@ const Home = () => {
 
       {/* 6. PARTNERS */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
-        <h2 className="text-[oklch(28.2%_0.091_267.935)] text-4xl font-black uppercase mb-12 text-center">Our Partners</h2>
+        <h2 className="text-purple-700 text-4xl font-black uppercase mb-12 text-center">Our Partners</h2>
         <div className="flex flex-wrap justify-center items-center gap-16 opacity-70 transition-all">
           <img src={Prothea} alt="Prothea" className="h-16" />
           <img src={FPRJCLogo} alt="FPRJC" className="h-16" />

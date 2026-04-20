@@ -38,7 +38,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#2d0a50] font-sans selection:bg-[#2F5A67] selection:text-white">
+    <div className="min-h-screen bg-white font-sans selection:bg-[#2F5A67] selection:text-black">
       
       {/* NAVBAR */}
 <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
@@ -49,24 +49,24 @@ const Contact = () => {
   <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
     {/* Use the <Link> component and set the 'to' attribute to your route path */}
      <li className="cursor-pointer">
-      <Link to="/" className="hover:text-[oklch(54.6%_0.245_262.881)] cursor-pointer transition-colors">
+      <Link to="/" className="text-purple-700 cursor-pointer transition-colors">
         Home
       </Link>
     </li>
     
-    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+    <li className="text-purple-700 cursor-pointer transition-colors">
       <Link to="/programs">Programs</Link>
     </li>
     
-    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+    <li className="text-purple-700 cursor-pointer transition-colors">
       <Link to="/about">About Us</Link>
     </li>
 
-    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+    <li className="text-purple-700 cursor-pointer transition-colors">
       <Link to="/impact">DAI Impact</Link>
     </li>
     
-    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+    <li className="text-purple-700 cursor-pointer transition-colors">
       <Link to="/contact">Contact Us</Link>
     </li>
   </ul>
@@ -74,10 +74,10 @@ const Contact = () => {
 
       {/* HERO HEADER */}
       <section className="pt-40 pb-20 px-6 md:px-12 lg:px-24">
-        <h1 className="text-[oklch(54.6%_0.245_262.881)] text-6xl md:text-8xl font-black tracking-tighter uppercase italic">
+        <h1 className="text-purple-700 text-4xl md:text-8xl font-black tracking-tighter uppercase italic">
           Get In Touch
         </h1>
-        <p className="text-white/70 text-xl font-light mt-6 max-w-2xl">
+        <p className="text-black/70 text-xl font-light mt-6 max-w-2xl">
           Have questions or want to partner with us? Reach out and let's start a conversation about inclusion and empowerment.
         </p>
       </section>
@@ -86,11 +86,11 @@ const Contact = () => {
       <main className="pb-24 px-6 md:px-12 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-20">
         
         {/* Contact Form */}
-        <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10">
+        <div className="bg-black p-8 md:p-12 rounded-3xl border border-white/10">
           <form onSubmit={handleWhatsAppSend} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-[oklch(54.6%_0.245_262.881)] text-xs font-bold uppercase tracking-widest">Name</label>
+                <label className="text-white text-xs font-bold uppercase tracking-widest">Name</label>
                 <input 
                   type="text" 
                   required
@@ -100,7 +100,7 @@ const Contact = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-[oklch(54.6%_0.245_262.881)] text-xs font-bold uppercase tracking-widest">Email</label>
+                <label className="text-white text-xs font-bold uppercase tracking-widest">Email</label>
                 <input 
                   type="email" 
                   required
@@ -112,7 +112,7 @@ const Contact = () => {
             </div>
             
             <div className="space-y-2">
-              <label className="text-[oklch(54.6%_0.245_262.881)] text-xs font-bold uppercase tracking-widest">Subject</label>
+              <label className="text-white text-xs font-bold uppercase tracking-widest">Subject</label>
               <input 
                 type="text" 
                 required
@@ -123,7 +123,7 @@ const Contact = () => {
             </div>
 
             <div className="space-y-2">
-              <label className="text-[oklch(54.6%_0.245_262.881)] text-xs font-bold uppercase tracking-widest">Message</label>
+              <label className="text-white text-xs font-bold uppercase tracking-widest">Message</label>
               <textarea 
                 rows="5" 
                 required
