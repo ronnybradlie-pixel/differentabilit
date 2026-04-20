@@ -36,7 +36,7 @@ const Home = () => {
   <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
     {/* Use the <Link> component and set the 'to' attribute to your route path */}
      <li className="cursor-pointer">
-      <Link to="/" className="text-[oklch(54.6%_0.245_262.881)] border-b-2 border-[oklch(28.2%_0.091_267.935)]">
+      <Link to="/" className="hover:text-[oklch(54.6%_0.245_262.881)] cursor-pointer transition-colors">
         Home
       </Link>
     </li>
@@ -47,6 +47,10 @@ const Home = () => {
     
     <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
       <Link to="/about">About Us</Link>
+    </li>
+
+    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+      <Link to="/impact">DAI Impact</Link>
     </li>
     
     <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">

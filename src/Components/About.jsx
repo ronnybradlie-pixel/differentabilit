@@ -25,21 +25,40 @@ const About = () => {
     <div className="min-h-screen bg-[#2d0a50] font-sans selection:bg-[#2F5A67] selection:text-white">
       
       {/* 1. NAVBAR */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
-        scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
-      }`}>
-        <img src={logo} alt="DAI Logo" className="h-25 w-25" />
-        <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
-          <li><Link to="/" className="hover:text-[#2F5A67] transition-colors">Home</Link></li>
-          <li><Link to="/about" className="hover:text-[#2F5A67] transition-colors">Programs</Link></li>
-          <li><Link to="/programs" className="hover:text-[#2F5A67] transition-colors">About Us</Link></li>
-          <li><Link to="/contact" className="hover:text-[#2F5A67] transition-colors">Contact Us</Link></li>
-        </ul>
-      </nav>
+<nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
+  scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
+}`}>
+  <img src={logo} alt="DAI Logo" className="h-25 w-25" />
+  
+  <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
+    {/* Use the <Link> component and set the 'to' attribute to your route path */}
+     <li className="cursor-pointer">
+      <Link to="/" className="hover:text-[oklch(54.6%_0.245_262.881)] cursor-pointer transition-colors">
+        Home
+      </Link>
+    </li>
+    
+    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+      <Link to="/programs">Programs</Link>
+    </li>
+    
+    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+      <Link to="/about">About Us</Link>
+    </li>
+
+    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+      <Link to="/impact">DAI Impact</Link>
+    </li>
+    
+    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+      <Link to="/contact">Contact Us</Link>
+    </li>
+  </ul>
+</nav>  
 
       {/* 2. HERO SECTION */}
       <section 
-        className="relative h-[60vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" 
+        className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" 
         style={{ backgroundImage: `url(${Hero})` }}
       >
         <div className="text-center px-4">

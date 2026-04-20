@@ -30,7 +30,6 @@ const Footer = () => {
         <div>
           <h4 className="text-[oklch(54.6%_0.245_262.881)] font-bold uppercase tracking-widest mb-6">Connect</h4>
           <ul className="space-y-4 text-white/70 font-light">
-            <li>Nairobi, Kenya</li>
             <li>info@differentability.org</li>
           </ul>
         </div>
