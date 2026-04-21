@@ -4,6 +4,7 @@ import logo from '../assets/DAILogo.jpg';
 
 const Contact = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   // 1. Setup state to capture user input
   const [formData, setFormData] = useState({
@@ -40,37 +41,46 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-[#2F5A67] selection:text-black">
       
-      {/* NAVBAR */}
-<nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
-  scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
-}`}>
-  <img src={logo} alt="DAI Logo" className="h-25 w-25" />
-  
-  <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
-    {/* Use the <Link> component and set the 'to' attribute to your route path */}
-     <li className="cursor-pointer">
-      <Link to="/" className="text-purple-700 cursor-pointer transition-colors">
-        Home
-      </Link>
-    </li>
-    
-    <li className="text-purple-700 cursor-pointer transition-colors">
-      <Link to="/programs">Programs</Link>
-    </li>
-    
-    <li className="text-purple-700 cursor-pointer transition-colors">
-      <Link to="/about">About Us</Link>
-    </li>
+ {/* 1. NAVBAR */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
+        scrolled || isMenuOpen ? 'bg-white shadow-md border-b border-gray-100' : 'bg-transparent'
+      }`}>
+        <img src={logo} alt="DAI Logo" className="h-16 w-auto" />
 
-    <li className="text-purple-700 cursor-pointer transition-colors">
-      <Link to="/impact">DAI Impact</Link>
-    </li>
-    
-    <li className="text-purple-700 cursor-pointer transition-colors">
-      <Link to="/contact">Contact Us</Link>
-    </li>
-  </ul>
-</nav>  
+        {/* DESKTOP LINKS (Hidden on mobile) */}
+        <ul className={`hidden md:flex gap-8 font-bold uppercase text-xs tracking-widest ${
+          scrolled || isMenuOpen ? 'text-gray-900' : 'text-white'
+        }`}>
+          <li><Link to="/" className="hover:text-[#2F5A67] transition-colors">Home</Link></li>
+          <li><Link to="/programs" className="hover:text-[#2F5A67] transition-colors">Programs</Link></li>
+          <li><Link to="/about" className="hover:text-[#2F5A67] transition-colors">About Us</Link></li>
+          <li><Link to="/impact" className="hover:text-[#2F5A67] transition-colors">DAI Impact</Link></li>
+          <li><Link to="/contact" className="hover:text-[#2F5A67] transition-colors">Contact Us</Link></li>
+        </ul>
+
+        {/* HAMBURGER BUTTON (Visible only on mobile) */}
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden flex flex-col gap-1.5 z-50 focus:outline-none"
+        >
+          <div className={`w-8 h-1 bg-[#2d0a50] transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`}></div>
+          <div className={`w-8 h-1 bg-[#2d0a50] transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
+          <div className={`w-8 h-1 bg-[#2d0a50] transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`}></div>
+        </button>
+
+        {/* MOBILE DROPDOWN MENU */}
+        <div className={`absolute top-0 left-0 w-full bg-white shadow-2xl transition-all duration-500 md:hidden overflow-hidden ${
+          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        }`}>
+          <ul className="flex flex-col items-center justify-center h-screen gap-10 font-black uppercase text-xl tracking-widest text-[#2d0a50]">
+            <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/programs" onClick={() => setIsMenuOpen(false)}>Programs</Link></li>
+            <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
+            <li><Link to="/impact" onClick={() => setIsMenuOpen(false)}>DAI Impact</Link></li>
+            <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
+          </ul>
+        </div>
+      </nav>
 
       {/* HERO HEADER */}
       <section className="pt-40 pb-20 px-6 md:px-12 lg:px-24">

@@ -13,10 +13,9 @@ import Mentorship from '../assets/Mentorship.jpeg';
 import logo from '../assets/DAILogo.jpg';
 import Hero from '../assets/Hero.JPG';
 
-// ... keep all your imports at the top same as before
-
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,31 +28,48 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-[#2F5A67] selection:text-black">
       
-      {/* 1. NAVBAR - (Keep same as before) */}
+ {/* 1. NAVBAR */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
-        scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
+        scrolled || isMenuOpen ? 'bg-white shadow-md border-b border-gray-100' : 'bg-transparent'
       }`}>
-        <img src={logo} alt="DAI Logo" className="h-25 w-25" />
-        <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
-           <li className="cursor-pointer">
-            <Link to="/" className="hover:text-[oklch(54.6%_0.245_262.881)] cursor-pointer transition-colors">Home</Link>
-          </li>
-          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
-            <Link to="/Programs">Programs</Link>
-          </li>
-          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
-            <Link to="/about">About Us</Link>
-          </li>
-          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
-            <Link to="/impact">DAI Impact</Link>
-          </li>
-          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
-            <Link to="/contact">Contact Us</Link>
-          </li>
+        <img src={logo} alt="DAI Logo" className="h-16 w-auto" />
+
+        {/* DESKTOP LINKS (Hidden on mobile) */}
+        <ul className={`hidden md:flex gap-8 font-bold uppercase text-xs tracking-widest ${
+          scrolled || isMenuOpen ? 'text-gray-900' : 'text-white'
+        }`}>
+          <li><Link to="/" className="hover:text-[#2F5A67] transition-colors">Home</Link></li>
+          <li><Link to="/programs" className="hover:text-[#2F5A67] transition-colors">Programs</Link></li>
+          <li><Link to="/about" className="hover:text-[#2F5A67] transition-colors">About Us</Link></li>
+          <li><Link to="/impact" className="hover:text-[#2F5A67] transition-colors">DAI Impact</Link></li>
+          <li><Link to="/contact" className="hover:text-[#2F5A67] transition-colors">Contact Us</Link></li>
         </ul>
+
+        {/* HAMBURGER BUTTON (Visible only on mobile) */}
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden flex flex-col gap-1.5 z-50 focus:outline-none"
+        >
+          <div className={`w-8 h-1 bg-[#2d0a50] transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`}></div>
+          <div className={`w-8 h-1 bg-[#2d0a50] transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
+          <div className={`w-8 h-1 bg-[#2d0a50] transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`}></div>
+        </button>
+
+        {/* MOBILE DROPDOWN MENU */}
+        <div className={`absolute top-0 left-0 w-full bg-white shadow-2xl transition-all duration-500 md:hidden overflow-hidden ${
+          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        }`}>
+          <ul className="flex flex-col items-center justify-center h-screen gap-10 font-black uppercase text-xl tracking-widest text-[#2d0a50]">
+            <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/programs" onClick={() => setIsMenuOpen(false)}>Programs</Link></li>
+            <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
+            <li><Link to="/impact" onClick={() => setIsMenuOpen(false)}>DAI Impact</Link></li>
+            <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
+          </ul>
+        </div>
       </nav>
 
-      {/* 2. HERO SECTION - (Keep same as before) */}
+      {/* 2. HERO SECTION */}
       <section className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" style={{ backgroundImage: `url(${Hero})` }}>
         <div className="mx-4 p-8 md:p-16 bg-white/70 backdrop-blur- rounded-2xl border border-white/20 shadow-1xl h-2xl w-1/2 text-center">
           <h1 className="text-[#2d0a50] text-2xl md:text-3xl font-black tracking-tight uppercase leading-tight">EMPOWERING ABILITY, BEYOND DISABILITY.</h1>
@@ -63,7 +79,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3. ABOUT SECTION - (Keep same as before) */}
+      {/* 3. ABOUT SECTION  */}
       <section className="py-24 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row gap-12 items-center">
         <div className="w-full md:w-1/2"><img src={belinda} alt="About DAI" className="rounded-lg shadow-2xl" /></div>
         <div className="w-full md:w-1/2 text-left">
@@ -101,7 +117,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. IMPACT STATS & 6. PARTNERS (Keep same as before) */}
+      {/* 5. IMPACT STATS & 6. PARTNERS */}
       <section className="py-20 px-6 md:px-12 lg:px-24 flex flex-wrap justify-between gap-12 text-center bg-white">
         {[
           { label: "Women & Girls Reached", value: "156 +" },
