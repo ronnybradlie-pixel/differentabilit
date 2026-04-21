@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import HeroImg from '../assets/hero.png';
 import Covaw from '../assets/CovawLogo.png';
 import Prothea from '../assets/Prothealogo.png';
@@ -12,6 +12,8 @@ import Economic from '../assets/EconomicEmpowerment.jpeg';
 import Mentorship from '../assets/Mentorship.jpeg';
 import logo from '../assets/DAILogo.jpg';
 import Hero from '../assets/Hero.JPG';
+
+// ... keep all your imports at the top same as before
 
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -27,108 +29,79 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-[#2F5A67] selection:text-black">
       
-{/* 1. NAVBAR */}
-<nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
-  scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
-}`}>
-  <img src={logo} alt="DAI Logo" className="h-25 w-25" />
-  
-  <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
-    {/* Use the <Link> component and set the 'to' attribute to your route path */}
-     <li className="cursor-pointer">
-      <Link to="/" className="hover:text-[oklch(54.6%_0.245_262.881)] cursor-pointer transition-colors">
-        Home
-      </Link>
-    </li>
-    
-    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
-      <Link to="/Programs">Programs</Link>
-    </li>
-    
-    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
-      <Link to="/about">About Us</Link>
-    </li>
+      {/* 1. NAVBAR - (Keep same as before) */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 flex justify-between items-center ${
+        scrolled ? 'bg-black/40 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
+      }`}>
+        <img src={logo} alt="DAI Logo" className="h-25 w-25" />
+        <ul className="hidden md:flex gap-8 font-bold text-white uppercase text-xs tracking-widest">
+           <li className="cursor-pointer">
+            <Link to="/" className="hover:text-[oklch(54.6%_0.245_262.881)] cursor-pointer transition-colors">Home</Link>
+          </li>
+          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+            <Link to="/Programs">Programs</Link>
+          </li>
+          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+            <Link to="/about">About Us</Link>
+          </li>
+          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+            <Link to="/impact">DAI Impact</Link>
+          </li>
+          <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
+            <Link to="/contact">Contact Us</Link>
+          </li>
+        </ul>
+      </nav>
 
-    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
-      <Link to="/impact">DAI Impact</Link>
-    </li>
-    
-    <li className="hover:text-[oklch(28.2%_0.091_267.935)] cursor-pointer transition-colors">
-      <Link to="/contact">Contact Us</Link>
-    </li>
-  </ul>
-</nav>
-
-      {/* 2. HERO SECTION */}
-<section 
-  className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" 
-  style={{ backgroundImage: `url(${Hero})` }}
->
-  {/* The Translucent Card Container */}
-  <div className="mx-4 p-8 md:p-16 bg-white/70 backdrop-blur- rounded-2xl border border-white/20 shadow-1xl h-2xl w-1/2 text-center">
-    
-    <h1 className="text-[#2d0a50] text-2xl md:text-3xl font-black tracking-tight uppercase leading-tight">
-      EMPOWERING ABILITY, BEYOND DISABILITY.
-    </h1>
-    
-    {/* High contrast divider for visual structure */}
-    <div className="h-1.5 w-24 bg-[#2F5A67] mx-auto my-8 rounded-full"></div>
-    
-    <p className="text-gray-800 text-xl md:text-2xl font-bold max-w-3xl mx-auto italic leading-relaxed">
-      Supporting women and girls with disabilities to live with Dignity, Independence, and Purpose.
-    </p>
-
-    {/* Optional: Add a call to action button inside the card */}
-    <div className="mt-10">
-      <Link 
-        to="/about" 
-        className="bg-[#2d0a50] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-[#2F5A67] transition-all shadow-lg inline-block"
-      >
-        Learn More
-      </Link>
-    </div>
-    
-  </div>
-</section>
-
-      {/* 3. ABOUT SECTION */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row gap-12 items-center">
-        <div className="w-full md:w-1/2">
-          <img src={belinda} alt="About DAI" className="rounded-lg shadow-2xl" />
-        </div>
-        <div className="w-full md:w-1/2 text-left">
-          <h2 className="text-purple-700 text-4xl font-black uppercase mb-6">About Different Ability Initiative</h2>
-          <p className="text-black text-lg leading-relaxed opacity-80">
-            Different Ability Initiative (DAI) is a grassroots organization dedicated to advancing the rights, 
-            dignity, and inclusion of persons with disabilities, with a special focus on women and girls 
-            in underserved communities.
-          </p>
+      {/* 2. HERO SECTION - (Keep same as before) */}
+      <section className="relative h-[85vh] w-full flex items-center justify-center bg-fixed bg-center bg-cover" style={{ backgroundImage: `url(${Hero})` }}>
+        <div className="mx-4 p-8 md:p-16 bg-white/70 backdrop-blur- rounded-2xl border border-white/20 shadow-1xl h-2xl w-1/2 text-center">
+          <h1 className="text-[#2d0a50] text-2xl md:text-3xl font-black tracking-tight uppercase leading-tight">EMPOWERING ABILITY, BEYOND DISABILITY.</h1>
+          <div className="h-1.5 w-24 bg-[#2F5A67] mx-auto my-8 rounded-full"></div>
+          <p className="text-gray-800 text-xl md:text-2xl font-bold max-w-3xl mx-auto italic leading-relaxed">Supporting women and girls with disabilities to live with Dignity, Independence, and Purpose.</p>
+          <div className="mt-10"><Link to="/about" className="bg-[#2d0a50] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-[#2F5A67] transition-all shadow-lg inline-block">Learn More</Link></div>
         </div>
       </section>
 
-      {/* 4. FOCUS AREAS */}
+      {/* 3. ABOUT SECTION - (Keep same as before) */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row gap-12 items-center">
+        <div className="w-full md:w-1/2"><img src={belinda} alt="About DAI" className="rounded-lg shadow-2xl" /></div>
+        <div className="w-full md:w-1/2 text-left">
+          <h2 className="text-purple-700 text-4xl font-black uppercase mb-6">About Different Ability Initiative</h2>
+          <p className="text-black text-lg leading-relaxed opacity-80">Different Ability Initiative (DAI) is a grassroots organization dedicated to advancing the rights, dignity, and inclusion...</p>
+        </div>
+      </section>
+
+      {/* 4. FOCUS AREAS  */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-black/10">
         <h2 className="text-purple-700 text-4xl font-black uppercase mb-16 text-left">Our Focus Areas</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { title: "Advocacy for Inclusion and Equality", img: DIWA1 },
-            { title: "Sexual & Reproductive Health Rights", img: DIWA2 },
-            { title: "Mentorship & Peer Learning", img: Mentorship },
-            { title: "Economic Empowerment", img: Economic }
+            { title: "Advocacy for Inclusion and Equality", img: DIWA1, link: "/programs#advocacy" },
+            { title: "Sexual & Reproductive Health Rights", img: DIWA2, link: "/programs#srhr" },
+            { title: "Mentorship & Peer Learning", img: Mentorship, link: "/programs#mentorship" },
+            { title: "Economic Empowerment", img: Economic, link: "/programs#economic" }
           ].map((area, index) => (
-            <div key={index} className="flex flex-col text-left group">
+            <div key={index} className="flex flex-col text-left group bg-white/40 p-4 rounded-xl shadow-sm">
               <div className="overflow-hidden rounded-lg mb-4 h-48">
                 <img src={area.img} alt={area.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
-              <h3 className="text-black font-bold text-xl leading-snug transition-colors">
+              <h3 className="text-black font-bold text-xl leading-snug mb-4">
                 {area.title}
               </h3>
+              {/* Added Read More Button */}
+              <Link 
+                to={area.link} 
+                className="text-purple-700 font-black uppercase text-xs tracking-widest hover:text-[#2F5A67] transition-colors mt-auto"
+              >
+                Read More →
+              </Link>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 5. IMPACT STATS */}
+      {/* 5. IMPACT STATS & 6. PARTNERS (Keep same as before) */}
       <section className="py-20 px-6 md:px-12 lg:px-24 flex flex-wrap justify-between gap-12 text-center bg-white">
         {[
           { label: "Women & Girls Reached", value: "156 +" },
@@ -143,7 +116,6 @@ const Home = () => {
         ))}
       </section>
 
-      {/* 6. PARTNERS */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
         <h2 className="text-purple-700 text-4xl font-black uppercase mb-12 text-center">Our Partners</h2>
         <div className="flex flex-wrap justify-center items-center gap-16 opacity-70 transition-all">
