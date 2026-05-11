@@ -84,7 +84,8 @@ const Home = () => {
         <div className="w-full md:w-1/2"><img src={belinda} alt="About DAI" className="rounded-lg shadow-2xl" /></div>
         <div className="w-full md:w-1/2 text-left">
           <h2 className="text-purple-700 text-4xl font-black uppercase mb-6">About Different Ability Initiative</h2>
-          <p className="text-black text-lg leading-relaxed opacity-80">Different Ability Initiative (DAI) is a grassroots organization dedicated to advancing the rights, dignity, and inclusion...</p>
+          <p className="text-black text-lg leading-relaxed opacity-80">Different Ability Initiative (DAI) is a grassroots organization dedicated to advancing the rights, dignity, 
+            and inclusion of persons with disabilities, with a special focus on women and girls in underserved communities.</p>
         </div>
       </section>
 
