@@ -109,6 +109,7 @@ const Home = () => {
       },
       { 
         title: "Mentorship & Peer Learning", 
+        description: "Every child with a disability deserves the confidence, support, and opportunity to grow, belong, and thrive without limits.",
         img: Mentorship, 
         link: "/mentorship" 
       },
