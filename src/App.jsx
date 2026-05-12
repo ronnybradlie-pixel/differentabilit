@@ -7,6 +7,7 @@ import Impact from './Components/Impact'
 import Contact from './Components/Contact'
 import Footer from './Components/Footer'
 import Advocacy from './Components/Advocancy'
+import SRHR from './Components/SRHR'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/impact" element={<Impact />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/srhr" element={<SRHR />} />
       </Routes>
 
       <Footer />

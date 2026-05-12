@@ -102,7 +102,8 @@ const Home = () => {
         link: "/advocacy" 
       },
       { 
-        title: "Sexual & Reproductive Health Rights", 
+        title: "Sexual & Reproductive Health Rights",
+        description: "Every woman and girl with a disability deserves equal access to sexual and reproductive health, dignity, safety, and the freedom to make informed choices about her body.", 
         img: DIWA2, 
         link: "/srhr" 
       },
