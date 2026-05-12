@@ -39,7 +39,6 @@ const Home = () => {
           scrolled || isMenuOpen ? 'text-gray-900' : 'text-white'
         }`}>
           <li><Link to="/" className="hover:text-[#2F5A67] transition-colors">Home</Link></li>
-          <li><Link to="/programs" className="hover:text-[#2F5A67] transition-colors">Programs</Link></li>
           <li><Link to="/about" className="hover:text-[#2F5A67] transition-colors">About Us</Link></li>
           <li><Link to="/impact" className="hover:text-[#2F5A67] transition-colors">DAI Impact</Link></li>
           <li><Link to="/contact" className="hover:text-[#2F5A67] transition-colors">Contact Us</Link></li>
@@ -61,7 +60,6 @@ const Home = () => {
         }`}>
           <ul className="flex flex-col items-center justify-center h-screen gap-10 font-black uppercase text-xl tracking-widest text-[#2d0a50]">
             <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-            <li><Link to="/programs" onClick={() => setIsMenuOpen(false)}>Programs</Link></li>
             <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
             <li><Link to="/impact" onClick={() => setIsMenuOpen(false)}>DAI Impact</Link></li>
             <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
@@ -99,6 +97,7 @@ const Home = () => {
     {[
       { 
         title: "Advocacy for Inclusion and Equality", 
+        description: "Advocacy is a rights-based, people-centered process that empowers persons with disabilities to break barriers, influence policy, and drive systemic change.",
         img: DIWA1, 
         link: "/advocacy" 
       },
@@ -119,7 +118,7 @@ const Home = () => {
       }
     ].map((area, index) => (
       <div key={index} className="flex flex-col text-left group bg-white/40 p-4 rounded-xl shadow-sm">
-        <div className="overflow-hidden rounded-lg mb-4 h-48">
+        <div className="overflow-hidden rounded-lg mb-6 h-48">
           <img 
             src={area.img} 
             alt={area.title} 
@@ -129,6 +128,10 @@ const Home = () => {
         <h3 className="text-black font-bold text-xl leading-snug mb-4">
           {area.title}
         </h3>
+
+        <p className="text-black text-md leading-relaxed mb-4 line-clamp-4">
+          {area.description}
+        </p>
         {/* Navigation Link to Dedicated Page */}
         <Link 
           to={area.link} 

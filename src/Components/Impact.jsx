@@ -29,7 +29,6 @@ const Impact = () => {
           scrolled || isMenuOpen ? 'text-gray-900' : 'text-white'
         }`}>
           <li><Link to="/" className="hover:text-[#2F5A67] transition-colors">Home</Link></li>
-          <li><Link to="/programs" className="hover:text-[#2F5A67] transition-colors">Programs</Link></li>
           <li><Link to="/about" className="hover:text-[#2F5A67] transition-colors">About Us</Link></li>
           <li><Link to="/impact" className="hover:text-[#2F5A67] transition-colors">DAI Impact</Link></li>
           <li><Link to="/contact" className="hover:text-[#2F5A67] transition-colors">Contact Us</Link></li>
