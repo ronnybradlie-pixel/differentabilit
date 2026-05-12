@@ -114,9 +114,10 @@ const Home = () => {
         link: "/mentorship" 
       },
       { 
-        title: "Economic Empowerment", 
+        title: "Economic Empowerment",
+        description: "Economic empowerment gives persons with disabilities the confidence, independence, and opportunity to thrive with dignity.", 
         img: Economic, 
-        link: "/economic" 
+        link: "/economic-empowerment", 
       }
     ].map((area, index) => (
       <div key={index} className="flex flex-col text-left group bg-white/40 p-4 rounded-xl shadow-sm">
