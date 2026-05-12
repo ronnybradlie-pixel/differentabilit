@@ -90,33 +90,56 @@ const Home = () => {
       </section>
 
       {/* 4. FOCUS AREAS  */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-black/10">
-        <h2 className="text-purple-700 text-4xl font-black uppercase mb-16 text-left">Our Focus Areas</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { title: "Advocacy for Inclusion and Equality", img: DIWA1, link: "/programs#advocacy" },
-            { title: "Sexual & Reproductive Health Rights", img: DIWA2, link: "/programs#srhr" },
-            { title: "Mentorship & Peer Learning", img: Mentorship, link: "/programs#mentorship" },
-            { title: "Economic Empowerment", img: Economic, link: "/programs#economic" }
-          ].map((area, index) => (
-            <div key={index} className="flex flex-col text-left group bg-white/40 p-4 rounded-xl shadow-sm">
-              <div className="overflow-hidden rounded-lg mb-4 h-48">
-                <img src={area.img} alt={area.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              </div>
-              <h3 className="text-black font-bold text-xl leading-snug mb-4">
-                {area.title}
-              </h3>
-              {/* Added Read More Button */}
-              <Link 
-                to={area.link} 
-                className="text-purple-700 font-black uppercase text-xs tracking-widest hover:text-[#2F5A67] transition-colors mt-auto"
-              >
-                Read More →
-              </Link>
-            </div>
-          ))}
+  {/* 4. FOCUS AREAS */}
+<section className="py-24 px-6 md:px-12 lg:px-24 bg-black/10">
+  <h2 className="text-purple-700 text-4xl font-black uppercase mb-16 text-left">
+    Our Focus Areas (What we do)
+  </h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {[
+      { 
+        title: "Advocacy for Inclusion and Equality", 
+        img: DIWA1, 
+        link: "/advocacy" 
+      },
+      { 
+        title: "Sexual & Reproductive Health Rights", 
+        img: DIWA2, 
+        link: "/srhr" 
+      },
+      { 
+        title: "Mentorship & Peer Learning", 
+        img: Mentorship, 
+        link: "/mentorship" 
+      },
+      { 
+        title: "Economic Empowerment", 
+        img: Economic, 
+        link: "/economic" 
+      }
+    ].map((area, index) => (
+      <div key={index} className="flex flex-col text-left group bg-white/40 p-4 rounded-xl shadow-sm">
+        <div className="overflow-hidden rounded-lg mb-4 h-48">
+          <img 
+            src={area.img} 
+            alt={area.title} 
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+          />
         </div>
-      </section>
+        <h3 className="text-black font-bold text-xl leading-snug mb-4">
+          {area.title}
+        </h3>
+        {/* Navigation Link to Dedicated Page */}
+        <Link 
+          to={area.link} 
+          className="text-purple-700 font-black uppercase text-xs tracking-widest hover:text-[#2F5A67] transition-colors mt-auto"
+        >
+          Read More →
+        </Link>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* 5. IMPACT STATS & 6. PARTNERS */}
       <section className="py-20 px-6 md:px-12 lg:px-24 flex flex-wrap justify-between gap-12 text-center bg-white">
